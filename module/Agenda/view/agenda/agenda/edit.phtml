@@ -1,0 +1,32 @@
+<?php
+// module/Album/view/album/album/edit.phtml:
+
+$title = 'Edit album';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url(
+    'agenda',
+    array(
+        'action' => 'edit',
+        'agenda_id'     => $this->agenda_id,
+    )
+));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('agenda_id'));
+echo $this->formRow($form->get('agenda_nome'));
+echo "<br>";
+echo $this->formRow($form->get('agenda_fixo'));
+echo "<br>";
+echo $this->formRow($form->get('agenda_celular'));
+echo "<br>";
+echo $this->formRow($form->get('agenda_email'));
+echo "<br>";
+echo $this->formSubmit($form->get('submit'));
+echo "<br>";
+echo $this->form()->closeTag();
