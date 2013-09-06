@@ -25,6 +25,7 @@ class Album implements InputFilterAwareInterface
     {
     	return get_object_vars($this);
     }
+    
 
     // Add content to these methods:
     public function setInputFilter(InputFilterInterface $inputFilter)
